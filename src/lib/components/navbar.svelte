@@ -12,11 +12,11 @@
 		<div class="dropdown dropdown-left dropdown-bottom">
 			<button class="btn btn-sm m-1 normal-case">Saved Chats</button>
 			<ul
-				class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+				class="dropdown-content text-sm menu p-2 shadow bg-base-100 rounded-box w-44"
 				class:dropdown-open={openDropdown}
 			>
 				<li><a href="/chats/helloworldid">Hello, World</a></li>
-				<li><a href="/chats/randomidheremaybeulid">How to ...</a></li>
+				<li><a href="/chats/randomidheremaybeulid">Untitled</a></li>
 			</ul>
 		</div>
 		<a href="https://github.com/mystique09">
