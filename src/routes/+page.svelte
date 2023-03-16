@@ -1,2 +1,10 @@
-<h1 class="text-2xl text-purple-300">Welcome to ChatDocs</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="container my-4 m-auto">
+	<div>
+		<h1 class="font-semibold text-xl">Hello, World</h1>
+		<p class="mt-2 font-light">
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, excepturi! Ratione
+			exercitationem dolore dignissimos obcaecati impedit at eaque rerum velit eveniet tempore
+			excepturi ex, explicabo quo, itaque incidunt quidem architecto.
+		</p>
+	</div>
+</div>
