@@ -7,7 +7,7 @@
 
 <div class={avatar === 'bot' ? 'chat chat-start' : 'chat chat-end'}>
 	<ChatAvatar icon={avatar} />
-	<div class="chat-bubble {avatar === 'bot' ? 'bg-secondary' : 'bg-accent-content'}">
+	<div class="chat-bubble text-xs md:text-sm {avatar === 'bot' ? 'bg-secondary' : 'bg-accent-content'}">
 		{content}
 	</div>
 </div>
