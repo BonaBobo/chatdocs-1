@@ -1,4 +1,4 @@
-import type { Chat, ChatId, IChatRepository } from '../domain/llm';
+import type { Chat, ChatId, CreateChat, CreatePrompt, IChatRepository, Prompt } from '../domain/llm';
 import type { UserId } from '../domain/user';
 
 export class ChatRepository implements IChatRepository {
@@ -6,6 +6,14 @@ export class ChatRepository implements IChatRepository {
 
 	constructor(pb: App.Locals['pb']) {
 		this.pb = pb;
+	}
+
+	async createChat(dto: CreateChat): Promise<Chat> {
+		return {
+			...dto,
+			created_at: new Date(),
+			updated_at: new Date()
+		};
 	}
 
 	async getChat(id: ChatId): Promise<Chat> {
@@ -32,8 +40,13 @@ export class ChatRepository implements IChatRepository {
 		];
 	}
 
-	async addPrompt(): Promise<boolean> {
-		return true;
+	async addPrompt(dto: CreatePrompt): Promise<Prompt> {
+		return {
+			...dto,
+			id: 'hshshs',
+			created_at: new Date(),
+			updated_at: new Date()
+		};
 	}
 
 	async deleteChat(_id: ChatId): Promise<boolean> {

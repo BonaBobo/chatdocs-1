@@ -11,6 +11,8 @@ export type Chat = {
 	updated_at: Date;
 };
 
+export type CreateChat = Omit<Omit<Chat, 'created_at'>, 'updated_at'>;
+
 export type Prompt = {
 	id: string;
 	prompt: string;
@@ -20,16 +22,20 @@ export type Prompt = {
 	updated_at: Date;
 };
 
+export type CreatePrompt = Omit<Omit<Omit<Prompt, 'id'>, 'created_at'>, 'updated_at'>;
+
 export interface IChatRepository {
+	createChat(dto: CreateChat): Promise<Chat>;
 	getChat(id: ChatId): Promise<Chat>;
 	getChats(userId: UserId): Promise<Chat[]>;
-	addPrompt(): Promise<boolean>;
+	addPrompt(dto: CreatePrompt): Promise<Prompt>;
 	deleteChat(id: ChatId): Promise<boolean>;
 }
 
 export interface IChatUsecase {
+	createChat(dto: CreateChat): Promise<Chat>;
 	getChat(id: ChatId): Promise<Chat>;
 	getChats(userId: UserId): Promise<Chat[]>;
-	addPrompt(): Promise<boolean>;
+	addPrompt(dto: CreatePrompt): Promise<Prompt>;
 	deleteChat(id: ChatId): Promise<boolean>;
 }
